@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 */
 
 
-Route::get('/weather', 'ApiControllers\WeatherController@getWeather')->name('get_weather');
-Route::get('/weather/{ip}', 'ApiControllers\WeatherController@getWeather')->name('get_weather_ip');
+Route::get('/weather', 'ApiControllers\WeatherController@getGeolocation')->name('get_weather');
+Route::get('/weather/{ip}', 'ApiControllers\WeatherController@getGeolocation')->name('get_weather_ip');
 
 
