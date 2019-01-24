@@ -13,6 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+Route::get('/weather', 'ApiControllers\WeatherController@getWeather')->name('get_weather');
+Route::get('/weather/{ip}', 'ApiControllers\WeatherController@getWeather')->name('get_weather_ip');
+
+
