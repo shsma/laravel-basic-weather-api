@@ -81,7 +81,7 @@ GET /weather/8.8.8.8
 ##### Services: Geolocation ip-api and freegeoip 
 - `app/services/IpApiService.php` 
 - `app/services/IpStackService.php`
-##### Services Providers: Geolocation ip-api and freegeoip 
+##### Service Providers: Geolocation ip-api and freegeoip 
 - `app/providers/IpApiServiceProvider.php`
 - `app/services/IpStackServiceProvider.php`
 
