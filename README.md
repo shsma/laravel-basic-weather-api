@@ -73,10 +73,17 @@ GET /weather/8.8.8.8
 ```
 
 ### API's basic technical documentation
-##### Routes: api routes are used within this API `routes/api.php`
-##### Controllers: Geolocation/WeatherController `app/Http/ApiControllers/GeolocationController.php`, `app/Http/ApiControllers/WeatherController.php`
-##### Services: Geolocation ip-api and freegeoip `app/services/IpApiService.php`, `app/services/IpStackService.php`
-##### Services Providers: Geolocation ip-api and freegeoip `app/providers/IpApiServiceProvider.php`, `app/services/IpStackServiceProvider.php`
+##### Routes: api routes are used within this API 
+- `routes/api.php`
+##### Controllers: Geolocation/WeatherController 
+- `app/Http/ApiControllers/GeolocationController.php`
+- `app/Http/ApiControllers/WeatherController.php`
+##### Services: Geolocation ip-api and freegeoip 
+- `app/services/IpApiService.php` 
+- `app/services/IpStackService.php`
+##### Services Providers: Geolocation ip-api and freegeoip 
+- `app/providers/IpApiServiceProvider.php`
+- `app/services/IpStackServiceProvider.php`
 
 
 ### Installation
