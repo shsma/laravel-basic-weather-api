@@ -45,10 +45,6 @@ class GeolocationController extends Controller
         return $response;
     }
 
-
-
-
-
     private function processIpApiService($ip_address)
     {
         $response = $this->ipApiService->fetchGeolocation($ip_address);

@@ -63,7 +63,6 @@ class WeatherController extends Controller
             }
         }
 
-
         try {
 
             $response = $client->request('GET', $baseUri."q=$geoPayload->city&appid=$apiKey");

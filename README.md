@@ -1,28 +1,20 @@
-# PHP Code Challenge
+<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+</p>
+
+
+# Code Challenge: Geolocation-Weather APIs
 
 ### Requirements
+- PHP7.1
+- composer
 
-Build a basic HTTP API web application using the PHP technologies of your choice. You will be evaluated on your ability to *architect* a miniature application.
-
-The web application will be responsible for returning the following information serialized as JSON:
-
-1. Geolocation information:
-    * Target IP address (use client IP if none specified)
-    * City/State/Country of IP
-2. Weather information using the geolocated city of the target IP address
-    * Current temperature (in **celcius**)
-    * Wind speeds
-
-For IP Geolocation, your application should use the following two free services:
-
-1. [ip-api.com](http://ip-api.com/)
-2. [freegeoip.net](http://freegeoip.net/)
-
-The client should be able to use different geolocation services based on a query parameter (?service=ip-api, or ?service=freegeoip) if provided, but default to one of them if nothing is specified. The response should also contain a value indicating to the client which service was used to return the Geolocation response.
-
-For weather information, you should use the [OpenWeatherMap API](http://openweathermap.org/current) to get the current weather information for a city by name. You may use our API key: `6103b0f582e78c7382bc6b0cdc06deb8`.
-
-> **NOTE:** Our OpenWeatherMap API key has a rate limit of 60 requests/minute. If you are throttled, you need to wait a full minute before it will work again.
+### API's basic general documentation
 
 ### Endpoints
 
@@ -30,11 +22,19 @@ For weather information, you should use the [OpenWeatherMap API](http://openweat
 
 ##### `GET /geolocation/:ip_address`
 
+##### `GET /geolocation/:ip_address?service=freegeoip`
+
+##### `GET /geolocation?service=freegeoip`
+
+##### `GET /geolocation/:ip_address?service=ip-api`
+
+##### `GET /geolocation?service=ip-api`
+
 ##### `GET /weather`
 
 ##### `GET /weather/:ip_address`
 
-### Sample Requests
+### Sample Requests and responses payload
 
 ```
 GET /geolocation
@@ -72,22 +72,20 @@ GET /weather/8.8.8.8
 }
 ```
 
-### Instructions
+### API's basic technical documentation
+##### Routes: api routes are used within this API `routes/api.php`
+##### Controllers: Geolocation/WeatherController `app/Http/ApiControllers/GeolocationController.php`, `app/Http/ApiControllers/WeatherController.php`
+##### Services: Geolocation ip-api and freegeoip `app/services/IpApiService.php`, `app/services/IpStackService.php`
+##### Services Providers: Geolocation ip-api and freegeoip `app/providers/IpApiServiceProvider.php`, `app/services/IpStackServiceProvider.php`
 
-1. Begin by forking this repository to your own GitHub account
-2. Create your PHP implementation of the requirements above, committing your code as you progress
-3. Create a `README.md` with instructions detailing installation and configuration of your project so we can run it
-4. When finished, open a Pull Request to [lxrco/php-code-challenge-a](https://github.com/lxrco/php-code-challenge-c)
 
-### Remarks
+### Installation
 
-Feel free to use any technology you want or add features you think would make it better.
+##### `git clone repo`
+##### `cd  path/to/repo`
+##### `composer install`
+##### `cp .env.exemple .env` -> if needed
+##### `php artisan key:generate` -> if needed
+##### `php artisan serve`
+##### Boom! access API on localhost `127.0.0.1:8000`
 
-We're looking for developers who:
-* are comfortable relying on high-quality existing packages and knowing when is the appropriate time to use them
-* take pride in their creation instead of rushing to get it through the door
-* commit often and showcase work through a descriptive commit history
-
-Bonus points if you cover unit and/or functional testing.
-
-Happy coding!
