@@ -8,7 +8,7 @@
 </p>
 
 
-# Code Challenge: Geolocation-Weather APIs
+# Geolocation-Weather APIs
 
 ### Requirements
 - PHP7.1
